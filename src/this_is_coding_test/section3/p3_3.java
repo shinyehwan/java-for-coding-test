@@ -1,4 +1,4 @@
-package section3;
+package this_is_coding_test.section3;
 
 import java.util.Scanner;
 
