@@ -10,26 +10,38 @@ public class p3_2 {
 		int m = sc.nextInt();
 		int k = sc.nextInt();
 
-		int[] data = new int[n];
+		int[] arr = new int[n];
 
 		for (int i = 0; i < n; i++) {
-			data[i] = sc.nextInt();
+			arr[i] = sc.nextInt();
 		}
 
-		Arrays.sort(data);
+		Arrays.sort(arr);
 
+//		int cnt = 0;
+//		int sum = 0;
+//
+//		for (int i = 0; i < m; i++) {
+//
+//			int first = arr[arr.length - 1];
+//			int second = arr[arr.length - 2];
+//			cnt ++;
+//
+//			if (cnt % k == 0) {
+//				sum += second;
+//			} else {
+//				sum += first;
+//			}
+//		}
+//
+//		System.out.println(sum);
+		int sum = 0;
+		int first = arr[arr.length - 1];
+		int second = arr[arr.length - 2];
 
-		// 수열을 찾아내는 것이 중요하다
-		int cnt = (m / (k + 1)) * k;
-		cnt += m % (k + 1);
+		int dum = (m / (k + 1));
+		sum += (dum * first * k) + (dum * second) + (m % (k + 1) * first);
 
-		int first = data[n - 1];
-		int second = data[n - 2];
-
-		int result = first * cnt;
-		result += second * (m - cnt);
-
-		System.out.println(result);
-
+		System.out.println(sum);
 	}
 }
